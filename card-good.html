@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="My Style — богатый выбор мебели!">
+    <title>My Style</title>
+
+    <script>document.oncontextmenu=function(e){return false};</script>
+    
+    <link rel="icon" type="image/png" href="./images/favicon/favicon.png">
+    <link rel="preload" href="fonts/CoFoSans-Bold.woff2" as="font" type="font/woff2" crossorigin media="print" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="fonts/CoFoSans-Black.woff2" as="font" type="font/woff2" crossorigin media="print" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="fonts/CoFoSans-Regular.woff2" as="font" type="font/woff2" crossorigin media="print" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="fonts/CoFoSans-Medium.woff2" as="font" type="font/woff2" crossorigin media="print" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="styles/style.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+
+<body>
+<header class="header">
+
+    <div class="container">
+        <div class="header__wrapper"> 
+            <a href="index.html" class="subheader__logo">
+                <img src="images/svg/logoPNG.png" alt="Achilles Shop">
+            </a>
+            
+            <div class="dropdown" style="float:right;">
+                <button onclick="myFunction()" class="dropbtn">&#9776;</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="goods.html#Bed">Кровати</a>
+                    <a href="goods.html#Tumba">Тумбы</a>
+                    <a href="goods.html#Dulap">Шкафы</a>
+                    <a href="goods.html#Uslugi">Услуги</a>
+                    <!--
+                    <a href="goods.html#Bibs">Нагрудники</a>
+                    <a href="goods.html#Belts">Пояса</a>
+                    <a href="goods.html#Pouches">Подсумки</a>
+                    <a href="goods.html#Cloth">Одежда</a>
+                    <a href="goods.html#FabricsAccessories">Ткани / Фурнитура</a>
+                    <a href="goods.html#Uncategorized">Разное</a>   
+                  -->
+                  </div>
+                </div>
+                           <script>
+                /* Когда пользователь нажимает на кнопку, переключаться раскрывает содержимое */
+                function myFunction() {
+                  document.getElementById("myDropdown").classList.toggle("show");
+                }
+                
+                // Закрыть раскрывающийся список, если пользователь щелкнет за его пределами.
+                window.onclick = function(event) {
+                  if (!event.target.matches('.dropbtn')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                      var openDropdown = dropdowns[i];
+                      if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                      }
+                    }
+                  }
+                }
+                </script>
+
+</div>
+</div>
+</header>
+    <main>
+ 
+    <div class="swiper"><!-- Слайдер -->
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+         <!-- Slides -->
+         </div>
+         <!-- If we need pagination -->
+         <div class="swiper-pagination"></div>
+      </div>
+
+
+      <section class="card-good">
+            <div class="container card-good__wrapper">
+                <div class="card-good__image-wrapper">         
+                    <img class="card-good__image"  alt="">
+                </div>
+                <div class="card-good__description">
+                    <h2 class="card-good__title-wrapper">
+                        <p class="card-good__title"></p>
+                        <p class="card-good__brand"></p>
+                    </h2>
+                    <h2 class="card-good__title-wrapper">
+                        <p class="card-good__price"></p>
+                        <p class="card-good__stock"></p>
+                    </h2>            
+                    <h2 class="card-good__title-settings">
+                        <p class="card-good__sizes"></p>
+                            <p class="card-good__color-list"></p>
+                    </h2>                         
+                    <p class="card-good__descr"></p>
+          
+            
+             
+              <button class="buy_button" onclick="order()">Заказать</button>
+
+<script>
+function order() {
+    // Получаем текст из элемента с классом 'card-good__title'
+    var productTitle = document.querySelector('.card-good__title').innerText;
+    
+    // Получаем цену из элемента с классом 'card-good__price'
+    var productPrice = document.querySelector('.card-good__price').innerText;
+
+    // Кодируем текст для URL
+    var encodedTitle = encodeURIComponent(productTitle);
+    var encodedPrice = encodeURIComponent(productPrice);
+
+    // Формируем ссылку
+    var url = 'https://t.me/myradima?text=Здравствуйте%20заказываю%20кровать%20' + encodedTitle + '%2C%20за%20' + encodedPrice;
+
+    // Перенаправляем пользователя по ссылке
+    location.href = url;
+}
+</script>
+
+
+            </div>
+         
+        </section>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+<footer class="footer">
+    <div class="content">
+        <div class="button-container">
+            
+        </div>
+    </div>
+</footer>
+</html>

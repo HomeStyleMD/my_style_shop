@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="My Style — богатый выбор мебели!">
+    <title>My Style</title>
+
+    <script>document.oncontextmenu=function(e){return false};</script>
+    
+    <link rel="icon" type="image/png" href="./images/favicon/favicon.png">
+    <link rel="preload" href="fonts/CoFoSans-Bold.woff2" as="font" type="font/woff2" crossorigin media="print" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="fonts/CoFoSans-Black.woff2" as="font" type="font/woff2" crossorigin media="print" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="fonts/CoFoSans-Regular.woff2" as="font" type="font/woff2" crossorigin media="print" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="fonts/CoFoSans-Medium.woff2" as="font" type="font/woff2" crossorigin media="print" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="styles/style.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+
+<body>
+             <header class="header">
+
+    <div class="container">
+        <div class="header__wrapper"> 
+            <a href="index.html" class="subheader__logo">
+                <img src="images/svg/logoPNG.png" alt="My Style">
+            </a>
+            
+<div class="dropdown" style="float:right;">
+<button onclick="myFunction()" class="dropbtn">&#9776;</button>
+<div id="myDropdown" class="dropdown-content">
+  <a href="goods.html#Bed">Кровати</a>
+  <a href="goods.html#Tumba">Тумбы</a>
+  <a href="goods.html#Dulap">Шкафы</a>
+  <a href="goods.html#Uslugi">Услуги</a>
+  <!--
+  <a href="goods.html#Bibs">Нагрудники</a>
+  <a href="goods.html#Belts">Пояса</a>
+  <a href="goods.html#Pouches">Подсумки</a>
+  <a href="goods.html#Cloth">Одежда</a>
+  <a href="goods.html#FabricsAccessories">Ткани / Фурнитура</a>
+  <a href="goods.html#Uncategorized">Разное</a>   
+-->
+  </div>
+</div>
+           <script>
+/* Когда пользователь нажимает на кнопку, переключаться раскрывает содержимое */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Закрыть раскрывающийся список, если пользователь щелкнет за его пределами.
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+
+            
+        </div>
+    </div>
+</header>
+ <main>
+      
+</section>
+       <!-- Секция контактов -->
+       <section class="contacts">
+        <div class="container">
+            <h2>Контакты</h2>
+            <p>Наш адрес: Strada Transnistria 10/3</p>
+            <p>Телефон:+3730000000</p>
+
+            <div class="square-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18297.246456181627!2d28.893140104068923!3d47.022529428719714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97d60946f3c09%3A0x256204e2841fb5c2!2sHOME%20STYLE!5e0!3m2!1sru!2s!4v1728508566656!5m2!1sru!2s" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          
+            <div class="card-good__contact"> 
+              <a href="https://" class="fa fa-facebook"></a>
+              <a href="https://" class="fa fa-instagram"></a>
+            <button class="admin_button" onclick="location.href='https://example.com'">Администратор</button>
+            </div>
+
+      
+
+
+        </div>
+    </section>
+
+
+
+    </main>
+    <footer class="footer">
+        
+    </footer>
+
+    <script src=""></script>
+</body>
+</html>

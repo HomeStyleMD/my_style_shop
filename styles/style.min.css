@@ -1,0 +1,707 @@
+
+@font-face {
+    font-family: 'CoFo Sans';
+    src: local("CoFo Sans Bold"), local("CoFoSans-Bold"), url("../fonts/CoFoSans-Bold.woff2") format("woff2"), url("../fonts/CoFoSans-Bold.woff") format("woff");
+    font-weight: bold;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'CoFo Sans';
+    src: local("CoFo Sans Black"), local("CoFoSans-Black"), url("../fonts/CoFoSans-Black.woff2") format("woff2"), url("../fonts/CoFoSans-Black.woff") format("woff");
+    font-weight: 900;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'CoFo Sans';
+    src: local("CoFo Sans"), local("CoFoSans-Regular"), url("../fonts/CoFoSans-Regular.woff2") format("woff2"), url("../fonts/CoFoSans-Regular.woff") format("woff");
+    font-weight: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'CoFo Sans';
+    src: local("CoFo Sans Medium"), local("CoFoSans-Medium"), url("../fonts/CoFoSans-Medium.woff2") format("woff2"), url("../fonts/CoFoSans-Medium.woff") format("woff");
+    font-weight: 500;
+    font-display: swap
+}
+
+:root {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+*, *::before, *::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #fff;
+    font-family: "CoFo Sans", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    overflow-y: scroll;
+    color: black
+}
+
+button, input, optgroup, select, textarea {
+    font: inherit;
+    margin: 0
+}
+
+img {
+    max-width: 100%;
+    height: auto
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+ul, ol {
+    list-style: none
+}
+
+h1, h2, h3, h4, p, ul, ol, figure, figcaption {
+    padding: 0;
+    margin: 0
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px
+}
+
+.visually-hidden {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+button {
+    cursor: pointer
+}
+
+.header {
+    background-color: #ffffff;
+    color: #fff
+}
+
+.header__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 80px; /* Убедитесь, что значения height и line-height одинаковы */
+    line-height: 20px; /* Изменено значение line-height на 80px */
+}
+
+
+.header__button {
+    background-color: #000;
+    color: #FFF;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; 
+}
+
+
+
+
+.subheader {
+    min-height: 90px
+}
+
+
+.subheader__wrapper {
+    position: relative;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns:(1fr) [ 3 ];
+    grid-template-columns:repeat(3, 1fr);
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    min-height: 20px
+}
+
+
+.subheader__logo {
+    display: block;
+    max-width: 180px; 
+    max-height: 100%;
+    justify-self: center
+}
+
+
+
+.subheader__cart {
+    display: block;
+    -ms-grid-column-align: end;
+    justify-self: end;
+    background-color: transparent;
+    background-image: url("../images/svg/cart.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 28px;
+    border: none
+}
+
+.navigation__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center; /* Добавляем это свойство */
+    margin-bottom: 20px; /* Добавляем отступ снизу */
+    gap: 15px
+}
+
+
+.promo__grid-image {
+    width: 100%;
+    height: 100%;
+    -o-object-position: center;
+    object-position: center;
+    -o-object-fit: cover;
+    border-radius: 10px;
+    object-fit: cover
+    
+}
+
+.promo__grid {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 16px
+}
+
+.promo__text-overlay {
+    position: absolute;
+    top: 80%; /* Разместить текст посередине сверху */
+    left: 50%; /* Разместить текст посередине по горизонтали */
+    transform: translate(-50%, -50%); /* Центрирование текста */
+    color: black; /* Цвет текста */
+    font-size: 16px; /* Размер текста */
+    font-weight: bold; /* Жирный текст (по желанию) */
+    text-align: center; /* Выравнивание текста по центру */
+    opacity: 0.8; /* Прозрачность текста (по желанию) */
+    background-color: rgb(255, 255, 255); /* Полупрозрачный фон текста */
+    padding: 10px; /* Добавление отступов для текста (по желанию) */
+    border-radius: 10px; /* Устанавливает радиус скругления углов для рамки текста */
+}
+
+.promo__grid-item-content {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Ширина:Высота */
+}
+
+.promo__grid-item-content2 {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 1; /* Ширина:Высота */
+}
+
+.CatBackpacks {
+    position: relative; /* Необходимо для позиционирования вложенных элементов */
+    grid-column: 1/2;
+    grid-row: 1/2;
+    overflow: hidden;   /* Обрезает изображение, если оно выходит за пределы элемента */
+}
+
+.CatBags {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    overflow: hidden;   /* Обрезает изображение, если оно выходит за пределы элемента */
+}
+
+.CatArmor {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    overflow: hidden;   /* Обрезает изображение, если оно выходит за пределы элемента */
+}
+
+.CatUnloading {
+    grid-column: 2/3;
+    grid-row: 2/3; /* Добавлено значение для grid-row */
+    overflow: hidden;   /* Обрезает изображение, если оно выходит за пределы элемента */
+}
+
+.CatBibs {
+    grid-column: 1/2; /* Исправлено значение для grid-column */
+    grid-row: 3/4;    /* Добавлено значение для grid-row */
+    overflow: hidden;   /* Обрезает изображение, если оно выходит за пределы элемента */
+}
+
+.CatBelts {
+    grid-column: 2/3;
+    grid-row: 3/4;    /* Добавлено значение для grid-row */
+    overflow: hidden;   /* Обрезает изображение, если оно выходит за пределы элемента */
+}
+
+.CatPouches {
+    grid-column: 1/2;
+    grid-row: 4/5;    /* Добавлено значение для grid-row */
+    overflow: hidden;   /* Обрезает изображение, если оно выходит за пределы элемента */
+}
+
+.CatCloth {
+    grid-column: 2/3;
+    grid-row: 4/5;    /* Добавлено значение для grid-row */
+    overflow: hidden;   /* Обрезает изображение, если оно выходит за пределы элемента */
+}
+
+.CatFabricsAccessories {
+    grid-column: span 2; /* Это указывает, что элемент должен занимать ширину 2 колонок, начиная с первой колонки */
+    grid-row: 5/6;    /* Добавлено значение для grid-row */
+    overflow: hidden;   /* Обрезает изображение, если оно выходит за пределы элемента */
+    white-space: nowrap; /* Запретить перенос текста */
+}
+
+.Uncategorized {
+    grid-column: span 2; /* Это указывает, что элемент должен занимать ширину 2 колонок, начиная с первой колонки */
+    grid-row: 6/7;    /* Добавлено значение для grid-row */
+    overflow: hidden;   /* Обрезает изображение, если оно выходит за пределы элемента */
+    margin-bottom: 60px;
+    white-space: nowrap; /* Запретить перенос текста */
+}
+
+
+
+
+.goods {
+    padding-bottom: 30px
+}
+
+.goods__title {
+    margin-bottom: 30px
+}
+
+@media (max-width: 228px) {
+    .goods__title {
+        text-align: center
+    }
+}
+
+.goods__list {
+    display: -ms-grid;
+    display: grid;
+    gap: 16px;
+    -ms-grid-columns:(1fr) [ 4 ];
+    grid-template-columns:repeat(4, 1fr)
+}
+
+@media (max-width: 1024px) {
+    .goods__list {
+        -ms-grid-columns:(1fr) [ 3 ];
+        grid-template-columns:repeat(3, 1fr)
+    }
+}
+
+@media (max-width: 768px) {
+    .goods__list {
+        -ms-grid-columns:(1fr) [ 2 ];
+        grid-template-columns:repeat(2, 1fr)
+    }
+}
+
+@media (max-width: 228px) {
+    .goods__list {
+        -ms-grid-columns: 1fr;
+        grid-template-columns:1fr
+    }
+}
+
+.goods__item {
+    -ms-grid-column-align: center;
+    border-radius: 10px;
+    justify-self: center
+}
+
+.good {
+    -webkit-box-shadow: 0px 0px 3px #ccc;
+    box-shadow: 0px 0px 3px #ccc;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+}
+
+.good:hover {
+    -webkit-box-shadow: 0px 0px 5px #aaa;
+    box-shadow: 0px 0px 5px #aaa
+}
+
+@media (max-width: 228px) {
+    .good {
+        max-width: 320px
+    }
+}
+
+.good__price {
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: left
+}
+
+.good__descr {
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: left
+}
+
+.good__title {
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-align: left
+}
+
+.good__title__grey {
+    color: #888
+}
+
+.good__sizes {
+    margin-bottom: 10px;
+    color: #888;
+    text-align: left
+}
+
+.good__link {
+    -ms-flex-item-align: end;
+    -ms-grid-row-align: end;
+    align-self: end;
+    background-image: url("../images/svg/more.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    margin: 0 auto;
+    padding-left: 20px
+}
+
+.good__description {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns:1fr;
+    -ms-grid-rows:(auto) [ 4 ];
+    grid-template-rows:repeat(4, auto);
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: end;
+    height: 100%;
+    padding: 15px;
+    text-align: center;
+    font-size: 13px
+}
+
+.card-good__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+
+}
+
+
+
+.card-good__image-wrapper {
+    max-width: 750px
+}
+
+.card-good__description {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 750px;
+    -ms-flex-preferred-size: 280px;
+    flex-basis: 280px;   
+    display: grid;
+    grid-template-columns: auto auto; /* Определяем две колонки */
+    gap: 20px
+  
+}
+
+.card-good__contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px; 
+    margin-bottom: 60px; /* Ваш отступ снизу */
+    gap: 5px; /* Расстояние между блоками внутри */
+}
+
+
+.admin_button {
+    flex: 1; /* Растягиваем кнопку на доступную ширину */
+    background-color: #000;
+    color: #FFF;
+    padding: 17px 17px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; 
+
+}
+
+.fa fa-facebook{
+    grid-column: 1; 
+    text-align: left; /* Выравниваем текст вправо */
+    margin-bottom: 0px
+}
+
+.fa fa-instagram{
+    grid-column: 1; 
+    text-align: left; /* Выравниваем текст вправо */
+    margin-bottom: 0px
+}
+
+
+
+
+.square-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* Соотношение сторон 1:1 */
+}
+
+.square-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+
+
+
+@media (max-width: 968px) {
+    .card-good__description {
+        display: -ms-grid;
+        display: grid;
+        gap: 20px
+    }
+}
+
+.card-good__brand {
+    font-size: 15px;
+    grid-column: 1; /* Помещаем .card-good__title в первую колонку */
+    font-weight: 400;
+    line-height: 32px;
+    margin-bottom: 0px
+}
+
+.card-good__title-wrapper {
+    grid-column: 1; /* Помещаем .card-good__title в первую колонку */
+    margin-bottom: 0px
+}
+
+.card-good__title {
+    grid-column: 1; /* Помещаем .card-good__title в первую колонку */
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 16px
+}
+
+
+
+
+
+
+
+@media (max-width: 968px) {
+    .card-good__title-wrapper {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+        grid-column: 1/2;
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        grid-row: 1/2
+    }
+}
+
+@media (max-width: 520px) {
+    .card-good__title-wrapper {
+        grid-column: auto;
+        grid-row: auto
+    }
+}
+
+
+.card-good__price {
+    font-size: 23px;
+    line-height: 16px;
+    font-weight: normal;
+    grid-column: 2; /* Помещаем .card-good__price во вторую колонку */
+    text-align: right; /* Выравниваем текст вправо */
+    margin-bottom: 0px
+}
+
+.card-good__descr {
+    grid-column: span 2; /* Растягиваем элемент на две колонки */
+}
+
+.card-good__title-settings{
+    grid-column: span 2; /* Растягиваем элемент на две колонки */
+}
+
+.card-good__color-list {
+    font-weight: normal;
+    font-size: 17px;
+    margin-bottom: 1px
+}
+
+.card-good__sizes {
+    font-weight: normal;
+    font-size: 17px;
+    margin-bottom: 1px
+}
+
+
+.card-good__stock {
+    font-size: 15px;
+    grid-column: 2; /* Помещаем .card-good__sizw в первую колонку */
+    line-height: 32px;
+    font-weight: normal;
+    text-align: right;
+    margin-bottom: 0px
+}
+
+.swiper {
+    width: 100%;
+    height: auto;
+    margin-top: 20px; /* Ваш отступ сверху */
+    margin-bottom: 20px; /* Ваш отступ сверху */
+    text-align: center;
+    swiper-theme-color: #FF0000;
+  }
+
+.swiper-pagination-bullet-active {
+    color: #FF0000;
+    opacity: 1
+}
+
+.card-good__slider{
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .footer
+  {
+    background-color: #ffffff;   
+  }
+
+ 
+
+  .buy_button {
+    width: 100%;
+    grid-column: span 2; /* Растягиваем элемент на две колонки */
+    margin-top: 10px;
+    margin-bottom: 60px; /* Ваш отступ снизу */
+    background-color: #000;
+    color: #FFF;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; 
+
+}
+
+
+
+/* Кнопка выпадающего списка */
+.dropbtn {
+  background-color: #000;
+  color: #ffffff;
+  font-size: 25px; 
+  border: none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.dropdown {
+    float: right;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+    z-index: 9999;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+/* Кнопка выпадающего списка */
+
+
+/* Перекраска svg  https://isotropic.co/tool/hex-color-to-css-filter/ */
+.filter-green{
+    filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(339deg) brightness(101%) contrast(101%);
+}
+/* Перекраска svg */
+
+/* иконки соц сетей */
+.fa {
+    padding: 20px;
+    font-size: 50px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 2px 2px;
+    border-radius: 4px;
+  }
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+    .fa-instagram {
+        background: #ab050e;
+        color: white;
+      }
+/* иконки соц сетей */
